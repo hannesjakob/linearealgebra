@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage{amssymb}
+\geometry{legalpaper,margin=1in}
+\linespread{1.9}
+\begin{document}
+\section*{Arbeitsblatt 7}
+\subsection*{Aufgabe 29}
+\subsubsection*{(a)}Sei $z \in \mathbb{C}$ zeigen sie, dass dann gilt: $z\bar{z}=|z|^2$\\
+	Beweis: $z=(a,b), \bar{z}=(a,-b), |z|=\sqrt{a^2+b^2}
+	\Rightarrow z\bar{z}=(a*a+b*b,a*(-b)-a*b)=(a^2+b^2,0)\\ = 		a^2+b^2  = |z|^2=\sqrt{a^2+b^2}^2=a^2+b^2$ \\
+\subsubsection*{(b)}Es seien $v,z\in \mathbb{C}, |z|=1, F_{v,z}(w)=v+z\bar{w}, u		\in\mathbb{C}, u^2=z$, wir schreiben $\bar{u}v=a+bi, a,b\in \mathbb{R}$ Sei $S_{v,z}(w)=bui+z\bar{w}, T_{v,z}(w)=au+w$ Zeigen sie, dass gilt: $F_{v,z}=S_{v,z}\circ T_{v,z}=T_{v,z}\circ S_{v,z}$ \\
+Beweis: Zuerst zeigen wir, dass $|u|=1: |z|=|u^2|=|u|*|u|=1\Rightarrow |u|=1\\
+(S_{v,z}\circ T_{v,z})(w)=S_{v,z}(au+w)=bui+z(\bar{au+w})=bui+z\bar{au}+z\bar{w}\\
+a+bi=bi+|z|^2a=bi|u|^2+z\bar{z}a=biu\bar{u}+za\bar{u}\bar{u}\Rightarrow v=\frac{a+bi}{\bar{u}}=biu+za\bar{u}\\
+\Rightarrow (S_{v,z}\circ T_{v,z})(w)=bui+za\bar{u}+w\bar{w}=v+z\bar{w}=F_{v,z}\\
+(T_{v,z}\circ S_{v,z})(w)=T_{v,z}(bui+z\bar{w}=au+bui+z\bar{w}\\
+au\bar{u}+bui\bar{u}=a|u|^2+bi|u|=a+bi\Rightarrow v=\frac{a+bi}{\bar{u}}=au+bui\\
+\Rightarrow(T_{v,z}\circ S_{v,z})(w)=au+bui+z\bar{w}=v+z\bar{w}=F_{v,z}(w)
+$
+\subsubsection*{(c)} Suche $w_0 \in \mathbb{C}$ mit $\{w\in\mathbb{C}|S_{v,z}(w)=w\}=\{w_0+tu,t\in\mathbb{R}\}=:G$\\
+$S_{v,z}(w_0+tu)=w_0+tu \Leftrightarrow bui+z*(\bar{w_0+tu})=w_0+tu \Leftrightarrow bui+z\bar{w_0}+z\bar{tu}=w_0+tu$\\
+$\Leftrightarrow bui+u^2\bar{w_0}=w_0 \Leftrightarrow bi+ u\bar{w_0}=\bar{u}w_0 \Leftrightarrow bi = \bar{u}w_0-u\bar{w_0}$\\
+$bi = \bar{u}w_0-\bar{\bar{u}w_0} \Leftrightarrow bi=2*Im(w_0\bar{u}) \Leftrightarrow Im(w_0\bar{u})=\frac{b}{2}\\
+ \Rightarrow w_0\bar{u}=\frac{b}{2}i*t \Leftrightarrow w_0=\frac{bui}{2}+tu$
+\subsubsection*{(d)}
+Zeigen sie: Die Abbildung $T_{v,z}$ bildet die Menge aus c auf sich selbst ab\\
+Beweis: $T_{v,z}(w_0+tu)=au+w_0+tu=w_0+(a+t)u, (a+t)\in \mathbb{R}\Rightarrow w_0+(a+t)u\in \{ w_0+tu|t
+\in \mathbb{R} \}$
+\subsubsection*{(e)}
+Geben sie eine Geometrische Interpretation der Abbildungen $F_{v,z}(w), T_{v,z}, S_{v,z}$:\\
+$F_{v,z}(w)$ spiegelt den gegebenen Vektor an der x-Achse, dreht ihn um den Punkt (0,0) und verschiebt ihn um den Vektor $v$.\\
+$T_{v,z}$ verschiebt den gegebenen Vektor um den Vektor $u$, multipliziert mit dem Vorfaktor $a$.\\
+$S_{v,z}$ spiegelt den gegebenen Vektor an der x-Achse, dreht ihn um den Punkt (0,0) und verschiebt ihn um den Vektor $u$, wobei dieser mit dem Vorfaktor $b$ multipliziert wurde und dessen x- und y-Koordinate vertauscht wurden, sowie er an der y-Achse gespiegelt wurde.
+\end{document}

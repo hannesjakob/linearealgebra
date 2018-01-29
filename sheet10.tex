@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{}{}[]
+\titleformat{\subsection}[runin]{\bfseries}{}{}{}[]
+\pagestyle{fancy}
+\fancyhead[L]{
+	Nils Lauinger
+	}
+\fancyhead[C]{
+	Analysis 1 {\"U}bung 8}
+\fancyhead[R]{Florian Kramer \\ Hannes Jakob}
+\geometry{legalpaper,margin=1in}
+\linespread{1.5}
+\begin{document}
+\subsection*{Aufgabe 41}\hfill\\
+Seien $P_1=(1,1), P_2=(1,-1), P_3=(2,1), Q_1=(-1,4), Q_2=(3,2), Q_3=(0,7)$ Vektoren in $\mathbb{R}^2$
+\subsubsection*{(i)}Gibt es eine lineare Abbildung, die $P_1$ auf $Q_i$ abbildet f{\"u}r $i=1,2,3$?\\
+$F=\begin{pmatrix}
+f_{11} & f_{12} \\ f_{21} & f_{22}
+\end{pmatrix}$,
+$P_1 * F = \begin{pmatrix}
+f_{11}+f_{12}\\ f_{21}+f_{22}
+\end{pmatrix} = 
+\begin{pmatrix}
+-1 \\ 4
+\end{pmatrix}, 
+P_2 * F = \begin{pmatrix}
+f_{11}-f_{12}\\ f_{21}-f_{22}
+\end{pmatrix} = 
+\begin{pmatrix}
+3 \\ 2
+\end{pmatrix}\\
+P_3 * F = \begin{pmatrix}
+2*f_{11}+f_{12}\\ 2*f_{21}+f_{22}
+\end{pmatrix} = 
+\begin{pmatrix}
+0 \\ 7
+\end{pmatrix}$\\
+Dies formen wir in 2 Gleichungssysteme um, da $f_{11}$ und $f_{12}$ nichts mit $f_{21}$ und $f_{22}$ zu tun haben.\\
+$f_{11}+f_{12}= -1 \Leftrightarrow f_{11}=-1-f_{12} \Rightarrow f_{11}-f_{12}=-1-f_{12}-f_{12}= -1-2*f_{12}=3 \\\Leftrightarrow f_{12}=-2 \Rightarrow f_{11}=1 \Rightarrow 2*f_11+f_12=2*1+(-2)=0$\\
+$f_{21}+f_{22}=4 \Leftrightarrow f_{21}=4-f_{22} \Rightarrow f_21-f_22= 4-f_{22}-f_{22}=2 \Leftrightarrow f_{22}=1 \Rightarrow f_{21}=3 \Rightarrow 2*f_{21}+f_{22} = 2*3+1=7$
+Somit gibt es eine lineare Abbildung, dargestellt durch die Matrix $F$, die die genannten Bedingungen erf{\"u}llt.
+\subsubsection*{(ii)}Gibt es eine lineare Abbildung, die $P_1$ auf $Q_1$, $P_2$ auf $Q_3$ und $P_3$ auf $Q_2$ abbildet?\\
+$G=\begin{pmatrix}
+g_{11} & g_{12} \\ g_{21} & g_{22}
+\end{pmatrix}, 
+P_1 * G = \begin{pmatrix}
+g_{11}+g_{12} \\ g_{21}+g_{22}
+\end{pmatrix} = 
+\begin{pmatrix}
+-1 \\ 4
+\end{pmatrix} = Q_1,\\
+P_2 * G = \begin{pmatrix}
+g_{11}-g_{12} \\ g_{21}-g_{22}
+\end{pmatrix} = 
+\begin{pmatrix}
+0 \\ 7
+\end{pmatrix} = Q_3, 
+P_3 * G = \begin{pmatrix}
+2*g_{11}+g_{12} \\ 2*g_{21}+g_{22}
+\end{pmatrix} = 
+\begin{pmatrix}
+3 \\ 2
+\end{pmatrix} = Q_2$\\
+Dies formen wir erneut in ein lineares Gleichungssystem um.\\
+$g_{11}+g_{12}=-1 \Leftrightarrow g_{11}=-1-g_{12} \Rightarrow g_{11}-g_{12} = -1-g_{12}-g_{12}=0 \Leftrightarrow g_{12}=0.5 \Rightarrow g_{11}=-0.5 \Rightarrow 2*g_{11}+g_{12}=-1+0.5 = -0.5 \neq 3$
+Damit existiert keine lineare Abbildung, die die Bedingungen erf{\"u}llt.
+\subsection*{Aufgabe 42}\hfill\\
+Sei $\mathfrak{B}=\{b_i\}_{i=1,...,5}:=\{\sin,\cos,\sin*\cos,\sin^2,\cos^2\}$ und $V = Span(\mathfrak{B})\subset Abb(\mathbb{R},\mathbb{R})$(die $b_i$ sind als Funktionen auf $\mathbb{R}$ zu verstehen). Betrachten sie den Endomorphismus $F: V \rightarrow V, f \rightarrow f'$, wobei $f'$ die erste Ableitung von $f$ bezeichnet.
+\subsubsection*{(i)}Zeigen sie, dass $\mathfrak{B}$ eine Basis von $V$ ist.\\
+Dass $\mathfrak{B}$ ein Erzeugendensystem ist, ist klar. Dass $\mathfrak{B}$ linear unabh{\"a}ngig ist, zeigen wir, indem wir f{\"u}r jeden Teil von $\mathfrak{B}$ lineare Unabh{\"a}ngigkeit zeigen. Gleichsetzen des Termes mit 0 bedeutet, dass die Funktion alle x auf 0 abbildet.
+$\lambda_1*\cos(x)+\lambda_2*\sin(x)+\lambda_3*\cos(x)*\sin(x)+\lambda_4*\cos(x)^2+\lambda_5*\sin(x)^2 = 0$. Zuerst betrachten wir den Term f{\"u}r $x=0$.\\
+$\lambda_1*\cos(0)+\lambda_2*\sin(0)+\lambda_3*\cos(0)*\sin(0)+\lambda_4*\cos(0)^2+\lambda_5*\sin(0)^2=\lambda_1+0+0+\lambda_4+0=0 \Rightarrow \lambda_1=-\lambda_4$.\\ Nun $x=\pi \Rightarrow \lambda_1*\cos(\pi)+\lambda_2*\sin(\pi)+\lambda_3*\sin(\pi)*\cos(\pi)-\lambda_1*\cos(\pi)+\lambda_5*\sin(\pi)^2=-\lambda_1+0+0-\lambda_1+0=0 \Rightarrow -2\lambda_1=0\Rightarrow \lambda_1=\lambda_4=0$\\ Den vereinfachten Term betrachten wir f{\"u}r $x=\frac{\pi}{2} \Rightarrow \lambda_2*\sin(0,5\pi)+\lambda_3*\cos(0,5\pi)+\lambda_5*\sin(0,5\pi)^2=\lambda_2+0+\lambda_5=0 \Rightarrow \lambda_2=-\lambda_5$. Nun betrachten wir den Term f{\"u}r $x=1,5\pi \Rightarrow \lambda_2*\sin(1,5\pi)+\lambda_3*\cos(1,5\pi)*\sin(1,5\pi)-\lambda_5*\sin(1,5*\pi)^2=-\lambda_2+0-\lambda_2=0 \Rightarrow 2*\lambda_2=0 \Rightarrow \lambda_2 = 0$ Nun bleibt lediglich $\lambda_3*\cos(x)*\sin(x)$ {\"u}brig, die Funktion bildet allerdings z.B. f{\"u}r $x=0,25\pi$ nicht auf $0$ ab, da $\lambda_3*\cos(0,25\pi)*\sin(0,25\pi)=0,5\lambda_3 \neq 0$ f{\"u}r $\lambda_3 \neq 0$ (gefordert, da mindestens ein $\lambda \neq 0$ sein muss.
+
+\subsubsection*{(ii)}Bestimmen sie $\alpha_{ij}, i,j=0,...,5$, sodass $F(b_j)=\sum_{i=1}^5\alpha_{ij}b_i$.
+$\begin{pmatrix}
+0 & 1 & 0 & 0 & 0\\
+-1& 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1\\
+0 & 0 & 2 & 0 & 0\\
+0 & 0 & -2 & 0 & 0\\ 
+\end{pmatrix}$
+Da vorfaktoren bei der Ableitung nicht ge{\"a}ndert werden, gilt:\\ 
+$\begin{pmatrix}
+0 & -1 & 0 & 0 & 0\\
+-1& 0 & 0 & 0 & 0\\
+0 & 0 & 0 & -1 & 1\\
+0 & 0 & 2 & 0 & 0\\
+0 & 0 & -2 & 0 & 0\\
+\end{pmatrix} * \begin{pmatrix}
+\sin \\ \cos \\ \sin*\cos \\ \cos^2 \\ \sin^2
+\end{pmatrix} = \begin{pmatrix}
+\cos \\ -\sin \\ \cos^2-\sin^2 \\ 2*\sin*cos \\ -2*\sin*\cos
+\end{pmatrix}$
+\subsubsection*{(iii)}Bestimmen sie die Basen von Ker$F$ und Im$F$.\\
+Basis vom Bild von F sind $\sin, \cos, \sin*\cos, \cos^2-\sin^2$, da diese linear Unabh{\"a}ngig sind. und nach (ii) im Bild sein m{\"u}ssen. Basis vom Kern ist demnach $\sin^2+\cos^2$, da  Funktion konstant ist und somit auf $0$ abgeleitet wird.
+\subsection*{Aufgabe 43}\hfill\\
+Sei $V$ ein endlichdimensionaler Vektorraum und $F: V \rightarrow V$ ein Endomorphismus. Es sei definiert: $W_0:=V$ und $W_{i+1}=F(W_i)$ f{\"u}r $i\in\mathbb{N}$. Dann gilt: Es gibt ein $m \in \mathbb{N}$ mit $W_{m+i}=W_m$ f{\"u}r alle $i\in\mathbb{N}$\\
+Ist der Kern von F leer, so ist die Aussage trivial, da $W_0=V=ker(F)+Im(F)=Im(F)=F(W_0)=W_1 \Rightarrow W_{i+1}=F(W_i)=W_i$. Ist der Kern nicht leer, so besitzt $W_1=F(W_0)$ eine kleinere Basis, da die Basis des Kerns abgezogen wird. So k{\"o}nnen wir weiter fortfahren, bis entweder $F(W_i)=W_i=W_{i+1}$ oder $W_i=\{0\}$, und somit auch auf sich selbst abgebildet wird, da $F(\{0\})=\{0\}$
+\end{document}

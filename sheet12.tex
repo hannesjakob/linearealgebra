@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{}{}[]
+\titleformat{\subsection}[runin]{\bfseries}{}{}{}[]
+\pagestyle{fancy}
+\fancyhead[L]{
+	Nils Lauinger
+	}
+\fancyhead[C]{
+	Analysis 1 {\"U}bung 8}
+\fancyhead[R]{Florian Kramer \\ Hannes Jakob}
+\geometry{legalpaper,margin=1in}
+\linespread{1.5}
+\begin{document}
+\subsection*{Aufgabe 52}\textit{Inverse Matrizen}\\
+Beweis folgt aus der Matrixmultiplikation, da die einzelnen Spalten von $X$ mit der Matrix $A$ multipliziert werden. Die Resultierende Matrix hat dann Zeilenvektoren der Form $e_i$, d.h. die $i$-te Zeile hat eine $1$ an Stelle $i$ und sonst $0$. Dies ist laut Definition die Einheitsmatrix.
+Berechnen sie die Inverse Matrix von
+$$\begin{pmatrix}
+1 & 1 & 2 & 4 \\ 1 & 3 & 4 & -2 \\
+0 & 1 & 3 & 6 \\ 1 & 3 & 5 & 3
+\end{pmatrix}$$
+$\begin{pmatrix}
+1 & 1 & 2 & 4 \\ 1 & 3 & 4 & -2 \\
+0 & 1 & 3 & 6 \\ 1 & 3 & 5 & 3
+\end{pmatrix}*\begin{pmatrix}
+x_{11} & x_{12} & x_{13} & x_{14} \\
+x_{21} & x_{22} & x_{23} & x_{24} \\
+x_{31} & x_{32} & x_{33} & x_{34} \\
+x_{41} & x_{42} & x_{43} & x_{44}
+\end{pmatrix} = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}$\\
+$\begin{pmatrix}
+1 & 1 & 2 & 4 \\ 1 & 3 & 4 & -2 \\
+0 & 1 & 3 & 6 \\ 1 & 3 & 5 & 3
+\end{pmatrix}*X=\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}\Leftrightarrow\begin{pmatrix}
+1 & 1 & 2 & 4 \\ 0 & 2 & 2 & -6 \\
+0 & 1 & 3 & 6 \\ 0 & 2 & 3 & -1
+\end{pmatrix}*X=\begin{pmatrix}
+1 & 0 & 0 & 0 \\ -1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\ -1 & 0 & 0 & -1
+\end{pmatrix} \Leftrightarrow \begin{pmatrix}
+1 & 1 & 2 & 4 \\ 0 & 1 & 1 & -3 \\
+0 & 0 & 2 & 9 \\ 0 & 0 & 1 & 5
+\end{pmatrix}*X=\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+-0,5 & 0,5 & 0 & 0 \\
+0,5 & -0,5 & 1 & 0 \\
+0 & -1 & 0 & 1
+\end{pmatrix}\Leftrightarrow\begin{pmatrix}
+1 & 1 & 2 & 4 \\ 0 & 1 & 1 & -3 \\
+0 & 0 & 1 & 4,5 \\ 0 & 0 & 0 & 1
+\end{pmatrix}*X=\begin{pmatrix}
+1 & 0 & 0 & 0 \\ -0,5 & 0,5 & 0 & 0 \\
+0,25 & -0,25 & 0,5 & 0 \\
+-0,5 & -1,5 & -1 & 2 
+\end{pmatrix}$\\
+$x_{41}=-0,5 | x_{42}=-1,5 | x_{43}=-1 | x_{44}=2$\\
+$x_{31}+4,5x_{41}=x_{31}-2,25=0,25 \Rightarrow x_{31}=2,5 | x_{32}+4,5x_{42}=x_{32}-6,75=-0,25 \Rightarrow x_{32}=6,5 | x_{33}+4,5x_{43}=x_{33}-4,5 = 0,5 \Rightarrow x_{33}=5 | x_{34}+4,5x_{44}=x_{34}+9 = 0 \Rightarrow x_{34}=-9$\\
+$x_{21}+x_{31}-3x_{41}=x_{21}+2,5+1,5 = -0,5 \Rightarrow x_{21}=-4,5 | \\
+x_{22}+x_{32}-3x_{42}=x_{22}+6,5+4,5=0,5 \Rightarrow x_{22}=-10,5 |
+x_{23}+x_{33}-3x_{43}=x_{23}+5+3=0 \Rightarrow x_{23}=-8 |
+x_{24}+x_{34}-3x_{44}=x_{24}-9-6=0 \Rightarrow x_{24}=15$\\
+$x_{11}+x_{21}+2x_{31}+4x_{41}=x_{11}-4,5+5-2=1 \Rightarrow x_{11}=2,5 \\
+x_{12}+x_{22}+2x_{32}+4x_{42}=x_{12}-10,5+13-6=0 \Rightarrow x_{12}=3,5 \\
+x_{13}+x_{23}+2x_{33}+4x_{43}=x_{13}-8+10-4=0 \Rightarrow x_{13}=2 \\
+x_{14}+x_{24}+2x_{34}+4x_{44}=x_{14}+15-18+8=0 \Rightarrow x_{14}=-5$\\
+$\begin{pmatrix}
+1 & 1 & 2 & 4 \\ 1 & 3 & 4 & -2 \\
+0 & 1 & 3 & 6 \\ 1 & 3 & 5 & 3
+\end{pmatrix}*\begin{pmatrix}
+2,5 & 3,5 & 2 & -5 \\
+-4,5 & -10,5 & -8 & 15 \\
+2,5 & 6,5 & 5 & -9 \\
+-0,5 & -1,5 & -1 & 2
+\end{pmatrix}=\begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+\end{pmatrix} \Rightarrow A^{-1}=\begin{pmatrix}
+2,5 & 3,5 & 2 & -5 \\
+-4,5 & -10,5 & -8 & 15 \\
+2,5 & 6,5 & 5 & -9 \\
+-0,5 & -1,5 & -1 & 2
+\end{pmatrix}$
+\subsection*{Aufgabe 53}
+Stellen sie sowohl die Matrix $A$ als auch die Matrix $A^{-1}$ als Produkt von Elementarmatrizen dar
+$$A=\begin{pmatrix}
+1 & 1 & 1 \\  1 & 2 & 2 \\ 1 & 2 & 3
+\end{pmatrix}$$
+$S_1(1)=\begin{pmatrix}
+1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+\end{pmatrix}, S_1(1)*Q^2_1(1)*Q^3_1(1)*Q^3_2(1)=\begin{pmatrix}
+1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1
+\end{pmatrix},\\ S_1(1)*Q^2_1(1)*Q^3_1(1)*Q^3_2(1)Q^1_2(1)=\begin{pmatrix}
+1 & 1 & 1 \\ 1 & 2 & 2 \\ 0 & 0 & 1
+\end{pmatrix}, S_1(1)*Q^2_1(1)*Q^3_1(1)*Q^3_2(1)*Q^1_2(1)*Q^2_3(1)=\begin{pmatrix}
+1 & 1 & 1 \\ 1 & 2 & 2 \\ 1 & 2 & 3
+\end{pmatrix}=A$,\\
+$ Q^2_3(-1)*Q^1_2(-1)*Q^3_2(-1)*Q^3_1(-1)*Q^2_1(-1)=\begin{pmatrix}
+2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 1
+\end{pmatrix}=A^{-1}$, da \\
+$S_1(1)*Q^2_1(1)*Q^3_1(1)*Q^3_2(1)*Q^1_2(1)*Q^2_3(1)*
+Q^2_3(-1)*Q^1_2(-1)*Q^3_2(-1)*Q^3_1(-1)*Q^2_1(-1)\\=
+S_1(1)*Q^2_1(1)*Q^3_1(1)*Q^3_2(1)*Q^1_2(1)*Q^2_3(1)*
+Q^2_3(1)^{-1}*Q^1_2(1)^{-1}*Q^3_2(1)^{-1}*(Q^3_1(1))^{-1}*Q^2_1(1)^{-1}\\=
+S_1(1)*Q^2_1(1)*Q^3_1(1)*Q^3_2(1)*Q^1_2(1)*(Q^2_3(1)*
+Q^2_3(1)^{-1})*Q^1_2(1)^{-1}*Q^3_2(1)^{-1}*Q^3_1(1)^{-1}*Q^2_1(1)^{-1}\\=
+S_1(1)*Q^2_1(1)*Q^3_1(1)*Q^3_2(1)*(Q^1_2(1)*Q^1_2(1)^{-1})*
+Q^3_2(1))^{-1}*(Q^3_1(1))^{-1}*Q^2_1(1)^{-1}\\=
+S_1(1)*Q^2_1(1)*Q^3_1(1)*(Q^3_2(1)*Q^3_2(1)^{-1})*Q^3_1(1)^{-1}*Q^2_1(1)^{-1}\\=
+S_1(1)*Q^2_1(1)*(Q^3_1(1)*Q^3_1(1)^{-1})*Q^2_1(1)^{-1}\\=S_1(1)*(Q^2_1(1)*Q^2_1(1)^{-1})\\=S_1(1)=e_{nxn}$, weiterhin: \\
+$\begin{pmatrix}
+1 & 1 & 1 \\ 1 & 2 & 2 \\ 1 & 2 & 3
+\end{pmatrix}*\begin{pmatrix}
+2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 1
+\end{pmatrix}=\begin{pmatrix}
+2-1 & -1+2-1 & 1-1 \\ 2-2 & -1+4-2 & -2+2 \\ 2-2 & -1+4-3 & -2+3
+\end{pmatrix}=\begin{pmatrix}
+1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+\end{pmatrix}$
+\subsection*{Aufgabe 54}\textit{Ein Rangsatz}\\
+Sei $A\in Mat_K(m\times n)$, Man zeige: Zeilenrang von $M$=Spaltenrang von $M$.\\
+Sei $r$ der Zeilenrang von $A$. $a$ hat damit $r$ linear unab{\"a}ngige Zeilenvektoren, die eine Basis ($(v_1,...,v_r)$ bilden, weshalb jeder Zeilenvektor eine Kombination der Basisvektoren ist, also: $A_1=\lambda_{11}v_1+...+\lambda_{1r}v_r$. F{\"u}r die einzelnen Elemente gilt dann: $a_{ij}=\sum_{k=1}^r\lambda_{ik}v_{kj}$, also z.B. f{\"u}r die erste Spalte:\\
+$a_{11}=\lambda_{11}v_{11}+\lambda_{12}v_{21}+...+\lambda_{1r}v_{r1}$\\
+$a_{m1}=\lambda_{m1}v_{11}+\lambda_{m2}v_{21}+...+\lambda_{mr}v_{r1}$, also f{\"u}r den 1.Spaltenvektor:\\
+$\begin{pmatrix}
+a_{11} \\ a_{21} \\ ... \\ a_{m1}
+\end{pmatrix}=v_{11}*\begin{pmatrix}
+\lambda_{11} \\ \lambda_{12} \\ ... \\ \lambda_{m1}
+\end{pmatrix}+...+v_{r1}*\begin{pmatrix}
+\lambda_{1r} \\ \lambda_{2r} \\ ... \\ \lambda_{mr}
+\end{pmatrix}$. Der Spaltenvektor ist somit eine Kombination von $r$ Vektoren, die allerdings nicht linear abh{\"a}ngig sein m{\"u}ssen. Folglich gilt: $Spaltenrang(A)\leq Zeilenrang(A)$. F{\"u}hrt man das gleiche mit der transponierten Matrix aus, erh{\"a}lt man $Spaltenrang(A^T)=Zeilenrang(A)\leq Zeilenrang(A^T)=Spaltenrang(A)$, daher $Spaltenrang(A)=Zeilenrang(A)$ 
+\end{document}

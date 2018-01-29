@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{}{}[]
+\titleformat{\subsection}[runin]{\bfseries}{}{}{}[]
+\pagestyle{fancy}
+\fancyhead[L]{
+	Nils Lauinger
+	}
+\fancyhead[C]{
+	Analysis 1 {\"U}bung 8}
+\fancyhead[R]{Florian Kramer \\ Hannes Jakob}
+\geometry{legalpaper,margin=1in}
+\linespread{1.5}
+\begin{document}
+\subsection*{\textbf{Aufgabe 37}}\textit{Ein Modul ohne Dimension}\\
+Zeigen sie:
+\subsubsection*{(a)}$\mathbb{Z}$ ist ein Modul ({\"u}ber $\mathbb{Z}$)\\
+Dass $\{\mathbb{Z},+,*\}$ ein Ring ist, haben wir bereits in der Vorlesung gelernt. Daraus folgt, dass $\{\mathbb{Z},+\}$ eine abelsche Gruppe ist.
+\begin{enumerate}
+\item[(M1)] $m*(r*s)=(m*r)*s$\\
+Dies folgt aus Geltung des Assoziativgesetzes bezgl. Multiplikation f{\"u}r Ringe.
+\item[(M2)] $(r+s)*m=r*m+s*m$
+\item[(M3)] $r*(m+n)=r*m+r*n$\\
+Dies (und M2) folgt aus der Geltung des Distributivgesetzes f{\"u}r Ringe.
+\item[(M4)] $1*m=m$\\
+Dies folgt aus der Existenz des Einselementes f{\"u}r Ringe.
+\end{enumerate}
+\subsubsection*{(b)}Ebenso sind $2\mathbb{Z}$ und $3\mathbb{Z}$ Moduln ({\"u}ber $\mathbb{Z}$)\\
+Beweis: $\lambda\mathbb{Z}, \lambda\in\mathbb{Z}$ ist ein Modul (im Folgenden gilt: $m,r,s\in\mathbb{Z}, m,n\in\lambda\mathbb{Z}$
+\begin{enumerate}
+\item[(M1)]$m*(r*s)=m*(r*s)$\\
+Dies folgt daraus, dass $\mathbb{Z}$ ein Ring ist.
+\item[(M2)]$(r+s)*m=r*m+s*m$\\
+$\forall m \in \lambda\mathbb{Z}: \exists x \in\mathbb{Z}: m={\lambda}x \Rightarrow (r+s)*m=(r+s)*\lambda*x=r*\lambda*x+s*\lambda*x=r*m+s*m$
+\item[(M3)]$r*(m+n)=r*m+r*n$\\
+$m={\lambda}x, n={\lambda}y \Rightarrow r*(m+n)=r*({\lambda}x+{\lambda}y)={\lambda}rx+{\lambda}ry=rm+rn$
+\item[(M4)]$1*m=m$\\
+$m={\lambda}x \Rightarrow 1*m=1*{\lambda}x={\lambda}x=m$
+\end{enumerate}
+F{\"u}r $\lambda=2$ oder $\lambda=3$ folgt die Behauptung
+\subsubsection*{(c)}$\{1\}$ ist ein unverk{\"u}rztes Erzeugendensystem von $\mathbb{Z}$\\
+Damit ein Erzeugendensystem vorliegt, muss gelten, dass $\forall x \in \mathbb{Z}: \exists \lambda \in \mathbb{Z}: \lambda * 1 = x \Rightarrow \lambda = x$. Dies ist trivial, da $\mathbb{Z}$ alle Zahlen in $\mathbb{Z}$ enthält. Dass ${1}$ unverkürzbar ist, ist ebenfalls klar, da $\emptyset$ nat{\"u}rlich nichts erzeugen kann.
+\subsubsection*{(d)}$\{2,3\}$ ist ebenso ein unverk{\"u}rztes Erzeugendensystem von $\mathbb{Z}$\\
+Dies l{\"a}sst sich zeigen, indem man festlegt, dass $\lambda_2=-\lambda_3 \Rightarrow \forall x \in \mathbb{Z}: \exists \lambda_2,\lambda_3 \in \mathbb{R}: \lambda_2*2+\lambda_3*3=x \Rightarrow -\lambda_3*2+\lambda_3*3=\lambda_3*1=x$. Damit ist $\{2,3\}$ ebenfalls ein Erzeugendensystem und unverk{\"u}rzbar, da $\{2\}$ oder $\{3\}$ z.B. nicht die $1$ erzeugen k{\"o}nnen.
+\subsection*{\textbf{Aufgabe 38}}\textit{Strukturen auf $Hom_K(V,V)$}\\
+Sei $V$ ein $K$-Vektorraum. Zeigen sie:
+\subsubsection*{(a)}$End_K(V)$, mit Punktweise Addition und Verkettung als Multiplikation, ist ein Ring, und $\forall f,g{\in}End_K(V), \forall\lambda{\in}K: ({\lambda}f){\circ}g={\lambda}(f{\circ}g)=f{\circ}({\lambda}g)$; ein K-Vektorraum, der au{\ss}erdem eine Ringstruktur tr{\"a}gt, so dass diese Vertr{\"a}glichkeitsbedingung gilt, hei{\ss}t K-Algebra.\\
+$E:=End_K(V)$. F{\"u}r einen Ring muss gelten:
+\begin{description}
+\item[$\{E,+\}$ ist eine abelsche Gruppe]\hfill \\
+$(f+g)(x)=f(x)+g(x).$ Da die Addition in $E$ auf die Addition in $K$ zur{\"u}ckgef{\"u}hrt werden kann und $\{K,+\}$ eine abelsche Gruppe ist, ist $\{E,+\}$ ebenfalls eine abelsche Gruppe
+\item[Die Multiplikation ist assoziativ]\hfill \\
+$(f{\circ}g){\circ}h=f(g(h))=f(g{\circ}h)=f{\circ}(g{\circ}h)$
+\item[Das Distributivgesetz gilt]\hfill \\
+$(f{\circ}(g+h))(x)=f((g+h)(x))=f(g(x)+h(x))=f(g(x))+f(h(x))=(f{\circ}g)(x))+(f{\circ}h)(x)$\\
+$((f+g){\circ}h)(x)=(f+g)(h(x))=f(h(x))+g(h(x))=(f{\circ}h)(x)+(f{\circ}g)(x)$
+\item[Zusatz: $({\lambda}f){\circ}g=\lambda(f{\circ}g)=f{\circ}({\lambda}g)$]\hfill \\
+$({\lambda}f){\circ}g=({\lambda}f)(g)=f({\lambda}g)=f{\circ}({\lambda}g)={\lambda}f(g)={\lambda}(f{\circ}g)$
+\end{description}
+
+\subsubsection*{(b)}$A:=Aut_K(V)$ ist eine Gruppe bezgl. Verkettung, aber f{\"u}r $V\neq\{0\}$ kein $K$-Vektorraum.\\
+1.$\{A,\circ\}$ ist eine Gruppe:
+\begin{description}
+\item[Geltung des Assoziativgesetzes]$(f{\circ}g){\circ}h=f{\circ}(g{\circ}h)$\hfill\\
+$(f{\circ}g){\circ}h=(f(g)){\circ}h=f(g(h))=f(g{\circ}h)=f{\circ}(g{\circ}h)$
+\item[Neutrales Element]$e: V{\rightarrow}V, x{\rightarrow}x$\hfill\\
+$\Rightarrow (f{\circ}e)(x)=f(e(x))=f(x)$
+\item[Inverses Element]\hfill\\
+Da jedes $f$ bijektiv ist, existiert $f^{-1}: V{\rightarrow}V$ mit $f(f^{-1}(x))=x \\\Rightarrow f{\circ}f^{-1}(x)=x=e(x) \Rightarrow (f{\circ}f^{-1})=e$
+\item[Kommutativit{\"a}t]\hfill\\
+Die Gruppe ist nicht abelsch, da im Allgemeinen die Komposition von Abbildungen nicht kommutiert.\\
+Beispiel: $K=\mathbb{R}, V=\mathbb{R}^1, f(x)=x+1, g(x)=x^3, f(g(x))=x^3+1, g(f(x))=(x+1)^3=x^3+3x^2+3x+1 {\neq} f(g(x))$
+\end{description}
+Sei $G,F{\in}Aut_K(V): G(x)=-F(x) \Rightarrow (G+F)(x)=G(x)+F(x)=G(x)-G(x)=0$ und somit nicht surjektiv f{\"u}r $V\neq\{0\}$
+\subsection*{\textbf{Aufgabe 39}}
+$U,V,W$ seien Vektorr{\"a}ume, $F{\in}Hom_K(V,W), G{\in}Hom_K(U,V)$. Zeigen sie:
+\subsubsection*{(a)}Falls $F$ ein Vektorraum-Isomorphismus ist, dann gilt $F^{-1}{\in}Hom_K(W,V)$\\
+Da $F$ bijektiv ist, existiert eine Abbildung $F^{-1}: W{\rightarrow}V$. $\forall x,y{\in}W: \exists a,b{\in}V: x=F(a), y=F(b) \Rightarrow F^{-1}(x+y)=F^{-1}(F(a)+F(b))=F^{-1}(F(a+b))=a+b=F^{-1}(F(a))+F^{-1}(F(b))=F(x)+F(y)$. Somit ist $F^{-1}$ ein Homomorphismus $W{\rightarrow}V$. 
+\subsubsection*{(b)}Ist $I$ eine Indexmenge und $(v_j)_{j{\in}I}{\in}V$, dann gilt:
+\begin{itemize}
+\item[(i)]$(v_j)_{j{\in}I}$ ist linear abh{\"a}ngig $\Rightarrow (F(v_j))_{j{\in}I}$ ist linear abh{\"a}ngig.\\
+$\exists (\lambda_j)_{j{\in}I}: \sum_{j{\in}I}\lambda_jv_j=0 \Rightarrow \sum_{j{\in}I}F(\lambda_jv_j)=F(\sum_{j{\in}I}\lambda_jv_j) = F(0)=0$
+\item[(ii)]$(F(v_j))_{j{\in}I}$ ist linear unabh{\"a}ngig $\Rightarrow (v_j)_{j{\in}I}$ ist linear unabh{\"a}ngig.\\
+In (i) haben wir $A \Rightarrow B$ bewiesen. Daraus folgt direkt $\neg B \Rightarrow \neg A$, also genau die geforderte Aussage.
+\end{itemize}
+\subsubsection*{(c)}
+\begin{description}
+\item[(i)] Ist $\tilde{V}{\subset}V$ ein Untervektorraum, dann ist auch $F(\tilde{V}){\subset}W$ ein Untervektorraum; Insbesondere ist $F(V)=im(F){\subset}W$ ein Untervektorraum.\\
+Dass $F(\tilde{V})$ eine Teilmenge von $W$ ist, ist klar. Da $\tilde{V}\neq\emptyset$, ist auch $F(\tilde{V})\neq\emptyset$. Weiterhin gilt:\\
+$\forall v,w \in F(\tilde{V}): \exists a,b \in \tilde{V}: F(a)=v, F(b)=w \Rightarrow v+w=F(a)+F(b)=F(a+b) \in F(\tilde{V})$, da $a+b\in\tilde{V}$\\
+$\forall w \in F(\tilde{V}): \exists a \in\tilde{V}: F(a)=w \Rightarrow {\lambda}w={\lambda}F(a)=F({\lambda}a) \in F(\tilde{V})$, da ${\lambda}a\in\tilde{V}$.\\
+Beweis f{\"u}r $F(V)$ Untervektorraum von $W$ erfolgt analog.
+\item[(ii)] Ist $\tilde{W}{\subset}W$ ein Untervektorraum, dann ist auch $F^{-1}(\tilde{W}){\subset}V$ ein Untervektorraum; insbesondere ist $ker(F)=F^{-1}({0}){\subset}V$ ein Untervektorraum.\hfill\\
+Dass $F^{-1}(\tilde{W})$ eine Teilmenge von $V$ ist, ist klar. Da $\tilde{W}\neq\emptyset$, ist auch $F^{-1}(\tilde{W})\neq\emptyset$\\
+$\forall a,b {\in}F^{-1}(\tilde{W}):a+b=F^{-1}(F(a))+F^{-1}(F(b))=F^{-1}(F(a)+F(b)){\in}F^{-1}(\tilde{W})$, da $(F(a)+F(b)){\in}\tilde{W}$ und $(F(F^{-1}(\tilde{W}))=\tilde{W}$ \\
+$\forall a{\in}F^{-1}(\tilde{W}), \forall \lambda \in K: \lambda*a=F^{-1}(F(\lambda*a))=F({\lambda}F^{-1}(a)){\in}F^{-1}(\tilde{W})$, da  $a \in \tilde{W}$\\
+$\ker(F)$ ist nicht leer, da $0\in\ker(F)$.\\
+$\forall a,b \in \ker(F): F(a)=F(b)=0 \Rightarrow F(a+b)=F(a)+F(b)=0+0=0 \Rightarrow (a+b) \in \ker(F)$\\
+$\forall a \in \ker(F), \lambda \in K: F(\lambda*a)=\lambda*F(a)=\lambda*0=0 \Rightarrow \lambda*a \in \ker(F)$ 
+\item[(iii)] Ist $F$ ein Isomorphismus, dann gilt $F(\tilde{V})\cong\tilde{V}$ f{\"u}r jeden Untervektorraum $\tilde{V}{\subset}V$\hfill\\
+Da $F$ bijektiv ist, existiert die Abbildung $G:=F^{-1}, G(F(x))=x$, die ebenfalls bijektiv und somit ein Isomorphismus ist. Somit existiert ein Isomorphismus von $\tilde{V}$ auf einen Untervektorraum $\tilde{W} \subset W$ und der Isomorphismus $G$ von $\tilde{W}=F(\tilde{V}$ auf $\tilde{V}$. Somit sind $F(\tilde{V})$ und $\tilde{V}$ isomorph.
+\end{description}
+\subsubsection*{(d)}$\dim(im(F))=\dim(F(V)){\leq}\dim(V)$
+$n:=\dim(V)$ somit existieren in $V$ genau $n$ linear unabh{\"a}ngige Vektoren, die eine Basis von $V$ bilden. Diese Vektorenfamilie nennen wir $(v_k)_{k<n}$. Damit ist f{\"u}r jeden Vektor $w \in V$ $(v_k)_{k<n}{\cup}w$ linear abh{\"a}ngig und somit auch $F(v_k)_{k<n}{cup}F(w)$. Somit ist $F(v_k)_{k<n}$, falls es linear unab{\"a}ngig ist, auch maximal. Ist $F((v_k)_{k<n})$ linear abh{\"a}ngig, so k{\"o}nnen wir Reihenweise Vektoren entfernen, bis lienare unabh{\"a}ngigkeit gegeben ist. Daraus folgt $\dim(F(V))\leq\dim(V)$.
+\end{document}

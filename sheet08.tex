@@ -1,0 +1,136 @@
+\documentclass[14pt]{Article}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titleformat{\subsubsection}[runin]{}{}{}{}[]
+\pagestyle{fancy}
+\fancyhead[L]{
+	Nils Lauinger
+	}
+\fancyhead[C]{
+	Analysis 1 {\"U}bung 8}
+\fancyhead[R]{Florian Kramer \\ Hannes Jakob}
+\geometry{legalpaper,margin=1in}
+\linespread{1.5}
+\begin{document}
+\subsection*{Aufgabe 33}
+Sei \(B = ((v_i, 0))_{i \in I} \cup (w_j, 0))_{j \in J}\). Seien o.B.d.A. I und J disjunkt (sind sie das nicht kann man durch umbenennen der Elemente und entsprechendem Anpassen der Abbildung auf \(w_j\) die Schnittmenge leeren, ohne dabei \(w_j\) zu \"andern). Dann ist zu zeigen:
+\begin{enumerate}
+\item{B ist ein Erzeugendensystem von \((V \times W)\)\\
+Sei \(x = (a, b) \in V \times W\). Dann existieren \((\lambda_i)_{i\in I}, (\mu_j)_{j \in J}\), so dass\\
+\(a = \sum_{i \in I} \lambda_i v_i, b = \sum_{j \in J}\mu_j w_j\).\\
+Damit gilt aber\\
+\((a, b) = (\sum_{i \in I} \lambda_i v_i, \sum_{j \in J}\mu_j w_j) = \sum_{i \in I \cup J} \xi_i b_i\)\\
+mit \(\xi_i = \begin{cases}\lambda_i & i \in I\\\mu_i&i \in J\end{cases}, b_i = \begin{cases}(v_i, 0) & i \in I\\(0, w_i)&i \in J\end{cases} \in B\).\\
+Also l\"asst sich jedes \(x \in V \times W\) als Linearkombination von Elementen aus B darstellen, und B ist ein Erzeugendensystem von \(V \times W\).
+}
+\item{B ist linear unabh\"angig.\\
+Seien\\
+\(\sum_{i \in I \cup J} \xi_i b_i = \sum_{i \in I} \lambda (v_i, 0) + \sum_{j \in J} \mu_j (0, w_j) = (0, 0)\), \(\xi\) und b wie oben.\\
+Dann ist sofort ersichtlich, dass beide Summen \((0, 0)\) sein m\"ussen, damit das Ergebnis \((0, 0)\) ist. Da alle \((v_i)_{i \in I}\) und \((w_j)_{j \in J}\) jedoch linear unabh\"angig sind, folgt direkt, dass \(\lambda_i = 0, \mu_j = 0\), also auch \(\xi_i = 0\), womit B linear unabh\"angig ist.
+}
+\end{enumerate}
+Damit ist B eine Basis von \(V \times W\). Da \(((v_i, 0))_{i \in I}, ((0, w_j))_{j \in J}\) nach Konstruktion Disjunkt sind, gile \(|B| = dim(V \times W) = dim(V) + dim(W)\), falls V und W endlich dimensional sind.
+\subsection*{Aufgabe 34}
+$\lambda_1 * (a+b+c)+\lambda_2 * (2a+2b+2c-d)+ \lambda_3 * (a-b-e)+\lambda_4*(5a+6b-c+d+e)+\lambda_5*(a-c+3e)+\lambda_6 *(a+b+d+e)=0\\
+\begin{pmatrix} 
+1 & 2 & 1 & 5 & 1 & 1\\
+1 & 2 & -1 & 6 & 0 & 1 \\
+1 & 2 & 0 & -1 & -1 & 0\\
+0 & -1 & 0 & 1 & 0 & 1 \\
+0 & 0 & -1 & 1 & 3 & 1
+\end{pmatrix} * 
+\begin{pmatrix}
+\lambda_1\\\lambda_2\\\lambda_3\\\lambda_4\\\lambda_5\\\lambda_6
+\end{pmatrix} =
+\begin{pmatrix}
+0\\0\\0\\0\\0
+\end{pmatrix} = 
+\begin{pmatrix} 
+1 & 2 & 1 & 5 & 1 & 1\\
+1 & 2 & -1 & 6 & 0 & 1 \\
+1 & 2 & 0 & -1 & -1 & 0\\
+0 & -1 & 0 & 1 & 0 & 1 \\
+0 & 0 & -1 & 1 & 3 & 1
+\end{pmatrix}
+\begin{pmatrix}
+8\\\frac{-10}{3}\\\frac{-1}{3}\\\frac{1}{3}\\1\\\frac{-11}{3}
+\end{pmatrix}=
+\begin{pmatrix}
+8-\frac{20}{3}-\frac{1}{3}+\frac{5}{3}+1-\frac{11}{3}\\
+8-\frac{20}{3}+\frac{1}{3}+\frac{6}{3}-\frac{11}{3}\\
+8-\frac{20}{3}-\frac{1}{3}-1\\
+\frac{10}{3}+\frac{1}{3}-\frac{11}{3}\\
+\frac{1}{3}+\frac{1}{3}+3-\frac{11}{3}
+\end{pmatrix}
+\\
+$Im Folgenden meint das Zeichen $\sim$, dass die folgende Matrix eine Umformung der Vorherigen ist\\$
+\begin{pmatrix} 
+1 & 2 & 1 & 5 & 1 & 1\\
+1 & 2 & -1 & 6 & 0 & 1 \\
+1 & 2 & 0 & -1 & -1 & 0\\
+0 & -1 & 0 & 1 & 0 & 1 \\
+0 & 0 & -1 & 1 & 3 & 1
+\end{pmatrix} \sim
+\begin{pmatrix}
+1 & 2 & 1 & 5 & 1 & 1\\
+0 & 0 & -2 & 1 & -1 & 0\\
+0 & 0 & -1 & -6 & -2 & -1\\
+0 & -1 & 0 & 1 & 0 & 1\\
+0 & 0 & -1 & 1 & 3 & 1
+\end{pmatrix} \sim 
+\begin{pmatrix}
+1 & 2 & 1 & 5 & 1 & 1\\
+0 & 1 & 0 & -1 & 0 & -1\\
+0 & 0 & -1 & -6 & -2 & -1\\
+0 & 0 & -2 & 1 & -1 & 0\\
+0 & 0 & -1 & 1 & 3 & 1
+\end{pmatrix} \\\sim
+\begin{pmatrix}
+1 & 2 & 1 & 5 & 1 & 1\\
+0 & 1 & 0 & -1 & 0 & -1\\
+0 & 0 & 1 & 6 & 2 & 1\\
+0 & 0 & -2 & 1 & -1 & 0\\
+0 & 0 & -1 & 1 & 3 & 1
+\end{pmatrix} \sim
+\begin{pmatrix}
+1 & 2 & 1 & 5 & 1 & 1\\
+0 & 1 & 0 & -1 & 0 & -1\\
+0 & 0 & 1 & 6 & 2 & 1\\
+0 & 0 & 0 & 13 & 3 & 2\\
+0 & 0 & 0 & 7 & 5 & 2
+\end{pmatrix} \sim 
+\begin{pmatrix}
+1 & 2 & 1 & 5 & 1 & 1\\
+0 & 1 & 0 & -1 & 0 & -1\\
+0 & 0 & 1 & 6 & 2 & 1\\
+0 & 0 & 0 & 7 & 5 & 2\\
+0 & 0 & 0 & 13 & 3 & 2
+\end{pmatrix} \\\sim
+\begin{pmatrix}
+1 & 2 & 1 & 5 & 1 & 1\\
+0 & 1 & 0 & -1 & 0 & -1\\
+0 & 0 & 1 & 6 & 2 & 1\\
+0 & 0 & 0 & 1 & 5/7 & 2/7\\
+0 & 0 & 0 & 13 & 3 & 2
+\end{pmatrix} \sim
+\begin{pmatrix}
+1 & 2 & 1 & 5 & 1 & 1\\
+0 & 1 & 0 & -1 & 0 & -1\\
+0 & 0 & 1 & 6 & 2 & 1\\
+0 & 0 & 0 & 1 & 5/7 & 2/7\\
+0 & 0 & 0 & 0 & -44/7 & 12/7
+\end{pmatrix}$\\
+W{\"a}hle $\lambda_5 = 1 \Rightarrow \lambda_6 = -\frac{11}{3}\\ \Rightarrow \lambda_4=-\frac{5}{7}+\frac{11}{3}*\frac{2}{7}=\frac{1}{3}\\
+\Rightarrow \lambda_3=-6\frac{1}{3} -2(1)-1\frac{11}{3}= -\frac{1}{3}\\ \Rightarrow \lambda_2=\frac{1}{3}+\frac{11}{3}=4\\ \Rightarrow\lambda_1=4+\frac{1}{3}-5\frac{1}{3}-1-\frac{11}{3}=3+\frac{15}{3}=8
+$
+\subsection*{Aufgabe 35}
+\subsubsection*{\textbf{Satz 1:}}$\forall x \in M: 0*x=0, \forall\lambda{\in}R: \lambda * 0=0$\\
+$0*x=(0+0)*x=0*x+0*x{\Rightarrow}0*x=0$
+\subsubsection*{\textbf{Satz 2:}}$\forall x \in M: (-1)*x=-x$\\
+$0=0*x=(1-1)*x=1*x+(-1)*x=x+(-1)*x=0\Rightarrow(-1)*x=-x$
+\subsubsection*{\textbf{Satz 3:}} Zeigen sie, dass im Allgemeinen nicht für Links-Moduln gilt: $\lambda{\in}R, x{\in}M, \lambda*x=0\Rightarrow\lambda=0{\vee}x=0$
+Gegenbeispiel: Sei $R=4\mathbb{Z}$ und $M=R^1 \Rightarrow{\exists}2{\in}R, 2{\in}M: \bar{2}*\bar{2}=\bar{4}=0$
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{}{}[]
+\titleformat{\subsection}[runin]{\bfseries}{}{}{}[]
+\pagestyle{fancy}
+\fancyhead[L]{
+	Nils Lauinger
+	}
+\fancyhead[C]{
+	LA 1 {\"U}bung 13}
+\fancyhead[R]{Florian Kramer \\ Hannes Jakob}
+\geometry{legalpaper,margin=1in}
+\linespread{1.5}
+\begin{document}
+\subsection*{Aufgabe 56}\textit{Orthogonaler Raum}\\
+Es sei $V$ ein $K$-Vektorraum und $W\subset V$ ein Untervektorraum. Dann hei{\ss}t $$W^0:=\{\alpha\in V^*: \alpha(w)=0 \forall w\in W\}$$
+der zu $W$ \textit{orthogonale} Raum.\\
+Sei weiters $V$ endlichdimensional. Zeigen sie: $W^0\subset V^*$ ist ein Untervektorraum der Dimension $$dim W^0=dimV^* -dimW^*$$
+Wir betrachten die Basis $(v_1,...,v_r)$ von $W$, die zur Basis $(v_1,...,v_r,v_{r+1},...,v_n)$ erweitert werden kann. Daher ist $(v_1^*,...,v_r^*)$ Basis von $W^*$ und $(v_1^*,...,v_n^*)$ Basis von $V^*$. Da $(v_{r+1}^*,...,v_n^*)$ nicht in der Basis von $W*$ enthalten und trotzdem linear unabh{\"a}ngig ist, wissen wir, dass jedes $v^*\in(v_{r+1}^*,...,v_n^*)$ jeden Vektor aus $W$ auf die Null abbildet, wobei das f{\"u}r die $ v^*\in(v_1^*,...,v_r^*)$ nicht gilt. Folglich erzeugt $(v_{r+1}^*,...,v_n)$ den orthogonalen Raum $W^0$. Aufgrund der linearen unabh{\"a}ngigkeit folgt, dass $(v_{r+1}^*,...,v_n)$ Basis von $W^0$ ist und somit gilt: $dim_K(W^0)=n-r=dim_K(V)-dim_K(W)$.\\
+Dass $W^0$ ein Untervektorraum ist, folgt daraus, dass die Basis von $W^0$ Teilmenge der Basis von $V^*$ ist.
+\subsection*{Aufgabe 57}\textit{Transposition}
+$(M(\mathcal{B},F,\mathcal{A}))^T=M(\mathcal{A}^*,F^T,\mathcal{B}^*)$\\
+$M(\mathcal{A},F^T,\mathcal{B})=(\alpha_{ij})_{j\leq m, i\leq n}, M(\mathcal{B},F,\mathcal{A})=(\tilde{\alpha}_{kl})_{k\leq m, l\leq n}$
+\subsection*{Aufgabe 58}\textit{k-Formen}\\
+Seien $U$ und $V$ $K$-Vektorr{\"a}ume. Zeigen sie
+\subsubsection*{(i)}Jede Linearkombination von $k$-Formen auf $V$ ist wieder eine $k$-Form
+{\"A}quivalent ist, zu zeigen, dass die $k$-Formen einen Untervektorraum von $Abb(V,K)$ bilden, d.h.:\\ $(\lambda\mu_1+\mu_2) \in \Lambda^k V$. Wir zeigen zuerst, dass $(\lambda\mu_1+\mu_2)$ eine Multilinearform ist:\\
+$(\lambda\mu_1+\mu_2)(x_1,...,\xi{x_j}+y_j,...,x_k)=\lambda*\mu_1(x_1,...,\xi{x_j}+y_j,...,x_k)+\mu_2(x_1,...,\xi{x_j}+y_j,...,x_k)=\lambda*\xi*\mu_1(x_1,...,x_j,...,x_k)+\lambda*\mu_1(x_1,...,y_j,...,x_k)+\xi*\mu_2(x_1,...,x_j,...,x_k)+\mu_2(x_1,...,y_j,...,x_k)=\xi*(\lambda\mu_1+\mu_2)(x_1,...,x_j,...,x_k)+(\lambda\mu_1+\mu_2)(x_1,...,y_j,...,x_k)$\\
+Alternation:\begin{enumerate}
+\item[(i)]Sei $(x_1,...,x_k)$ eine Familie von Vektoren, in der ein Vektor zweimal vorkommt.\\
+$(\lambda\mu_1+\mu_2)(x_1,...,x_k)=\lambda*\mu_1(x_1,...,x_k)+\mu_2(x_1,...,x_k)=\lambda*0+0=0$
+\item[(ii)]$(\lambda\mu_1+\mu_2)(x_1,...,x_i+\xi*x_j,...,x_j,...,x_k)\\=\lambda*\mu(x_1,...,x_i+\xi*x_j,...,x_j,...,x_k)+\mu_2(x_1,...,x_i+\xi*x_j,...,x_j,...,x_k)\\=\lambda*\mu_1(x_1,...,x_i,...,x_j,...,x_k)+\xi*\lambda*\mu_1(x_1,...,x_j,...,x_j,...,x_k)+\mu_2(x_1,...,x_i,...,x_j,...,x_k)+\xi*\mu_2(x_1,...,x_j,...,x_j,...,x_k)\\=\lambda*\mu_1(x_1,...,x_i,...,x_j,...,x_k)+\xi*\lambda*0+\mu_2(x_1,...,x_i,...,x_j,...,x_k)+\xi*0\\=(\lambda\mu_1+\mu_2)(x_1,...,x_i,...,x_j,...,x_k)$
+\end{enumerate}
+\subsubsection*{(ii)}Sei $\phi: V \rightarrow U$ eine lineare Abbildung und $\mu$ eine $k$-Form auf $U$. Dann ist $\mu^{phi}$, definiert als $$\mu^{\phi}(a_1,...,a_k)=\mu(\phi(a_1),...,\phi(a_k))$$ eine $k$-Form auf $V$.\\
+Wir zeigen wie oben zuerst, dass $\mu^{\phi}$ eine Multilinearform ist.\\
+$\mu^{\phi}(a_1,...,\xi*a_j+b_j,...,a_k)\\=\mu(\phi(a_1),...,\phi(\xi*a_j+b_j,...,a_k),...,\phi(a_k)=\mu(\phi(a_1),...,\xi\phi(a_j)+\phi(b_j),...,\phi(a_k))\\=\xi\mu(\phi(a_1),...,\phi(a_j),...,\phi(a_k))+\mu(\phi(a_1),...,\phi(b_j),...,\phi(a_k)\\=\xi*\mu^{\phi}(a_1,...,a_j,...,a_k)+\mu^{\phi}(a_1,...,b_j,...,a_k)$\\
+Anschlie{\ss}end erneut Alternation:
+\begin{enumerate}
+\item[(i)]Sei $(x_1,...,x_k)$ eine Familie Vektoren, die einen Vektor zweimal enth{\"a}lt, dann wird dieser von $\phi$ auch jeweils auf den gleichen Vektor abgebildet und die resultierende Familie enth{\"a}lt erneut einen doppelten Vektor und wird somit auf die $0$ abgebildet, wie es sein sollte.
+\item[(ii)]$\mu^{\phi}(x_1,...,x_i+\lambda*x_j,...,x_j,...,x_k)=\mu(\phi(x_1),...,\phi(x_i+\lambda*x_j),...,\phi(x_j),...,\phi(x_k)\\=
+\mu(\phi(x_1),...,\phi(x_i)+\lambda*\phi(x_j),...,\phi(x_j),...,\phi(x_k)\\=
+\mu(\phi(x_1),...,\phi(x_i),...,\phi(x_j),...,\phi(x_k))+\lambda*\mu(\phi(x_1),...,\phi(x_j),...,\phi(x_j),...,\phi(x_k))\\=
+\mu(\phi(x_1),...,\phi(x_i),...,\phi(x_j),...,\phi(x_k))*\lambda*0\\=
+\mu^{\phi}(x_1,...,x_i,...,x_j,...,x_k)$ 
+\end{enumerate}
+\textbf{Hinweis: }Bei Fall (ii) der Alternationspr{\"u}fung k{\"o}nnte auch $j<i$ sein, war allerdings zu viel Schreibaufwand und es ist f{\"u}r den Beweis irrelevant.
+\end{document}
